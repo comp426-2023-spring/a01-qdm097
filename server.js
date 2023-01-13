@@ -30,6 +30,7 @@ var data = fs.readFileSync('./public/index.html','utf8',(e, _) => {
 // 3. end with the data that you are reading in from ./public/index.html.
 const http = require('http')
 const server = http.createServer((request, result) => {
+	result.statusCode = 200;
 	result.writeHead(200, {'Content-Type': 'text/html'})
 	result.end(data);
 })
